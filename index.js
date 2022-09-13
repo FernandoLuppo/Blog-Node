@@ -22,8 +22,7 @@ const admin = require("./routes/admin");
 const user = require("./routes/user");
 require("./config/auth")(passport);
 const { isUser } = require("./helpers/userType");
-const db = require("./config/db");
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 //  Session Config
 app.use(
@@ -61,7 +60,7 @@ app.set("view engine", "hbs");
 
 //  Mongoose Config
 mongoose
-  .connect(db.mongoURI)
+  .connect("mongodb://localhost/blogApp")
   .then(() => {
     console.log("Connected with Successful");
   })

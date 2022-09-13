@@ -1,3 +1,4 @@
+//  Mobile Button
 let btnMobile = document.getElementById("bnt-mobile");
 let nav = document.getElementById("nav");
 
