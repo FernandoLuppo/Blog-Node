@@ -1,0 +1,25 @@
+<h1 class="list-title">Nova categoria:</h1>
+
+<section class="container-list">
+  <form action="/controller/categories/new" method="POST">
+    <label for="nome">Nome:</label>
+    <input
+      type="text"
+      id="nome"
+      name="name"
+      placeholder="Nome da categoria"
+      required
+    />
+    <label for="slug">Slug:</label>
+    <input
+      type="text"
+      id="slug"
+      name="slug"
+      placeholder="Slug da categoria"
+      required
+    />
+    <button type="submit" class="">Criar categoria</button>
+  </form>
+</section>
+  
+  {{>_adminAddCategoriesMsg}}

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Categorias:</h1>
+
+
+  {{#each category}}
+  <ul>
+    <li><a href="/category/{{slug}}"><h3>{{name}}</h3></a>
+    <hr>  
+  </ul>
+  {{else}}
+    <p>Nenhuma Categoria Cadastrada</p>
+  {{/each}}
+  
+</div>

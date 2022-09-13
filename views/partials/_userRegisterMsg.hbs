@@ -1,0 +1,23 @@
+{{#if registerSuccessMessage}}
+
+  <div class="container-success-message">
+    <h3>Usuário Cadastrado com sucesso</h3>
+  </div>
+
+{{/if}}
+
+{{#if emailErrorMessage}}
+
+  <div class="container-error-message">
+    <h3>Email já cadastrado</h3>
+  </div>
+
+{{/if}}
+
+{{#each registerErrorMessage}}
+
+  <div class="container-error-message">
+    <p>{{registerErrorsMessage}}</p>
+  </div>
+
+{{/each}}

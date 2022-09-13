@@ -1,0 +1,26 @@
+<h1 class="editCategories-title">Editar categoria:</h1>
+
+<section class="container-editCategories">
+  <form action="/controller/categories/edit" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="hidden" name="id" value="{{categories._id}}" />
+    <input
+      type="text"
+      id="nome"
+      name="name"
+      value="{{categories.name}}"
+      placeholder="Nome da categoria"
+      required
+    />
+    <label for="slug">Slug:</label>
+    <input
+      type="text"
+      id="slug"
+      name="slug"
+      value="{{categories.slug}}"
+      placeholder="Slug da categoria"
+      required
+    />
+    <button type="submit" class="">Editar categoria</button>
+  </form>
+</section>

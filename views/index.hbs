@@ -1,0 +1,39 @@
+{{>_userRegisterMsg}}
+
+<div class="container-home-page">
+  <h1>Bem vindo ao Blog Node</h1>
+  <p>Esse é um BLOG simples, desenvolvido com Node.js + Express + MongoDB.</p>
+  <hr />
+  <p>
+    Esse site foi criado com o intuito do estudo do Node.Js, banco de dados
+    MongoDB e alguns frameworks
+    </p>
+</div>
+
+
+<div class="content-home-page">
+  <hr />
+
+  {{>_indexPostMsg}}
+
+
+  <h2>Postagens recentes:</h2>
+
+  {{#each post}}
+    <div class="collection-datas">
+      <h3>{{title}}</h3>
+      <p>{{content}}</p>
+      <a href="/post/{{slug}}"><button>Leia mais</button></a>
+      <hr />
+      <small>Categoria: {{category.name}}</small>
+      <br />
+      <small>{{date}}</small>
+    </div>
+
+  {{else}}
+
+    <h4>Nenhuma postagem</h4>
+
+  {{/each}}
+
+</div>

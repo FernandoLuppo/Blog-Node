@@ -1,0 +1,15 @@
+{{#if addCategoriesSuccessMessage}}
+
+  <div class="container-success-message">
+    <h3>Categoria adicionada com sucesso</h3>
+  </div>
+
+{{/if}}
+
+{{#each addCategoriesErrorMessage}}
+
+  <div class="container-error-message">
+    <h3>{{categoriesErrorMessage}}</h3>
+  </div>
+
+{{/each}}

@@ -1,0 +1,26 @@
+
+{{>_adminDeleteCategoryMsg}}
+{{>_adminEditCategoryMsg}}
+
+<section class="container">
+  <h2>Lista de categorias:</h2>
+  <hr />
+  <a href="/admin/categories/add"><button>Nova categoria</button></a>
+</section>
+
+{{#each Category}}
+
+  <div class="container-admin-pages">
+    <h3>Nome: {{name}}</h3>
+    <p>Tema: {{slug}}</p>
+    <p>data de criação: {{date}}</p>
+    <div class="container-categories-buttons-adminCategories">
+      <a href="/admin/categories/edit/{{_id}}"><button>Editar Categoria</button></a>
+      <form action="/controller/category/delete" method="post">
+        <input type="hidden" name="id" value="{{_id}}">
+        <button>Deletar</button>
+      </form>
+    </div>
+  </div>
+
+{{/each}}

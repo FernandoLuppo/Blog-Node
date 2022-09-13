@@ -1,0 +1,20 @@
+<h2 class="list-title">Login:</h2>
+<div class="container-list">
+  <form action="/controller/login" method="post">
+    <label for="email">Email:</label>
+    <input type="email" name="email" required />
+    <label for="password">Senha:</label>
+    <input type="password" name="password" required />
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+
+{{>_userLoginMsg}}
+
+{{#if error}}
+
+  <div class="container-error-message">
+    <h3>{{error}}</h3>
+  </div>
+
+{{/if}}

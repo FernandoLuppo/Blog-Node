@@ -1,0 +1,611 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  padding: 10px;
+  background-color: #5e5e5e;
+}
+
+header > h1 > a {
+  margin-left: 50px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* -------------------- Nav -------------------- */
+nav {
+  background-color: #464646;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > ul {
+  display: flex;
+  margin-right: 50px;
+}
+
+nav > ul > li {
+  list-style: none;
+  margin-left: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav > ul > li:first-of-type {
+  margin-left: 50px;
+  color: #ffffff;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: #cecece;
+}
+
+nav > ul > li > a:visited {
+  color: #cecece;
+}
+
+nav > ul > li > a:hover {
+  color: #2d972d;
+}
+
+#bnt-mobile {
+  display: none;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  /* ----- Nav Mobile ----- */
+  #nav {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  nav > ul > li:first-of-type {
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    top: 40px;
+    right: 0;
+    transition: 0.6s;
+    visibility: hidden;
+    overflow-y: hidden;
+    background-color: #464646;
+  }
+
+  #menu-not-user {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    top: 40px;
+    right: 0;
+    transition: 0.6s;
+    visibility: hidden;
+    overflow-y: hidden;
+    background-color: #464646;
+  }
+
+  #menu-admin {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    top: 40px;
+    right: 0;
+    transition: 0.6s;
+    visibility: hidden;
+    overflow-y: hidden;
+    background-color: #464646;
+  }
+
+  nav > ul > li {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  #nav.active #menu-not-user {
+    height: 220px;
+    visibility: visible;
+  }
+
+  #nav.active #menu-admin {
+    height: 220px;
+    visibility: visible;
+  }
+
+  #nav.active #menu {
+    height: 220px;
+    visibility: visible;
+  }
+
+  #bnt-mobile {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    padding: 5px;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    background: none;
+  }
+
+  #hamburger {
+    width: 25px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    border-top: 2px solid #ffffff;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+    background-color: #ffffff;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/* -------------------- Container Default -------------------- */
+.container {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* -------------------- Container Admin -------------------- */
+.container-admin-pages {
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 11px;
+  border: 1px solid #bdbdbd;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .container-admin-pages {
+    width: 90%;
+  }
+}
+
+/* -------------------- Container Add -------------------- */
+.list-title {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.container-list {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 2px 3px 5px 2px #00000044;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .list-title {
+    width: 90%;
+  }
+
+  .container-list {
+    width: 90%;
+  }
+}
+
+/* -------------------- Page - Home (index) -------------------- */
+.container-home-page {
+  width: 50%;
+  padding: 50px 30px;
+  margin: auto;
+  margin-top: 40px;
+  background-color: #e7ecf0;
+}
+
+.container-home-page > h1 {
+  font-size: 40px;
+}
+
+.container-home-page > p {
+  margin-top: 15px;
+}
+
+.container-home-page > hr {
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
+  border-color: #ffffff80;
+}
+
+.content-home-page {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content-home-page > hr {
+  border-color: #ffffff80;
+}
+
+.content-home-page > h2 {
+  margin-top: 20px;
+}
+
+.collection-datas {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #8d8d8d80;
+}
+
+.collection-datas > p {
+  margin-top: 20px;
+}
+
+.collection-datas > hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.collection-datas > a > button {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #157347;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .container-home-page {
+    width: 90%;
+  }
+
+  .content-home-page {
+    width: 90%;
+  }
+}
+
+/* ---------- Page - Posts ---------- */
+.container-post {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 11px;
+  border: 1px solid #00000044;
+}
+
+.container-post > hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.container-post > p {
+  margin-top: 20px;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .container-post {
+    width: 90%;
+  }
+}
+
+/* ---------- Page - List of Categories ---------- */
+.container > h2 {
+  margin-bottom: 10px;
+}
+
+.container > a > button {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #157347;
+}
+
+.container > a > button:hover {
+  background-color: #228f5c;
+}
+
+/* --- Container Categories --- */
+.container-admin-pages > h3 {
+  margin-bottom: 20px;
+}
+
+.container-admin-pages > p {
+  margin-top: 5px;
+}
+
+/* --- Categories Buttons --- */
+.container-categories-buttons-adminCategories {
+  display: flex;
+  margin-top: 20px;
+}
+
+.container-categories-buttons-adminCategories > a > button {
+  width: 130px;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #3563b8;
+}
+
+.container-categories-buttons-adminCategories > a > button:hover {
+  background-color: #4c77c7;
+}
+
+.container-categories-buttons-adminCategories > form > button {
+  width: 130px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #b83535;
+}
+
+.container-categories-buttons-adminCategories > form > button:hover {
+  background-color: #c74c4c;
+}
+
+/* ---------- Page - Add Categories ---------- */
+.container-list > form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-list > form > label {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.container-list > form > input {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.container-list > form > button {
+  width: 130px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #157347;
+}
+
+.container-list > form > button:hover {
+  background-color: #228f5c;
+}
+
+/* ---------- Page - Add Post ---------- */
+textarea {
+  resize: none;
+  height: 150px;
+  padding: 5px;
+}
+
+select {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+/* ---------- Page - Edit Categories ---------- */
+.editCategories-title {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.container-editCategories {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 2px 3px 5px 2px #00000044;
+}
+
+.container-editCategories > form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-editCategories > form > label {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.container-editCategories > form > input {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.container-editCategories > form > button {
+  width: 130px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #157347;
+}
+
+.container-editCategories > form > button:hover {
+  background-color: #228f5c;
+}
+
+/* ---------- Page - index Categories ---------- */
+.container > ul > li:first-of-type {
+  margin-top: 40px;
+}
+
+.container > ul {
+  margin-bottom: 20px;
+}
+
+.container > ul > li > hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #00000011;
+}
+
+.container > ul > li > a {
+  text-decoration: none;
+}
+
+.container > ul > li > a > h3 {
+  color: #3563b8;
+  transition: 0.2s;
+}
+
+.container > ul > li > a > h3:hover {
+  color: #4c77c7;
+}
+
+/* ---------- Page - Category {{Slug}} ---------- */
+.container > hr {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* -------------------- MSG -------------------- */
+/* ----- Success Message ----- */
+.container-success-message {
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.container-success-message > h3 {
+  padding: 7px;
+  text-align: center;
+  border-radius: 20px;
+  color: #0e633b;
+  background-color: #2fa56e;
+}
+
+/* ----- Error Message ----- */
+.container-error-message {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.container-error-message > p {
+  margin-top: 10px;
+  padding: 7px;
+  text-align: center;
+  border-radius: 20px;
+  color: #6d0a0a;
+  background-color: #b83f3f;
+}
+
+.container-error-message > h3 {
+  padding: 7px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 20px;
+  color: #6d0a0a;
+  background-color: #b83f3f;
+}
+
+.container-edit-error-message {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.container-edit-error-message > h3 {
+  text-align: center;
+  color: #971010;
+}
+
+/* ----- media query 600px ----- */
+@media (max-width: 600px) {
+  .container-success-message {
+    width: 90%;
+  }
+
+  .container-error-message {
+    width: 90%;
+  }
+}

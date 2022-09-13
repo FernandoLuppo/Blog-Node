@@ -1,0 +1,22 @@
+{{#if postEditSuccessMessage}}
+
+  <div class="container-success-message">
+    <h3>Postagem Editada com Sucesso!!</h3>
+  </div>
+
+{{/if}}
+
+<div class="container-edit-error-message">
+  {{#if editPostErrorMessage}}
+    <h3>Não foi possível editar a categoria pois:</h3>
+
+    {{#each editPostErrorMessage}}
+
+      <div class="container-error-message">
+        <p>{{postEditErrorMessage}}</p>
+      </div>
+
+    {{/each}}
+
+  {{/if}}
+</div>

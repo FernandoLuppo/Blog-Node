@@ -1,0 +1,15 @@
+<h1 class="list-title">{{category.name}}:</h1>
+
+{{#each post}}
+  <div class="container">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <a href="/post/{{slug}}"><button>Leia mais</button></a>
+    <hr />
+    <small>Data de publicação: {{date}}</small>
+  </div>
+{{else}}
+  <div class="container">
+    <h3>Nenhuma postagem</h3>
+  </div>
+{{/each}}

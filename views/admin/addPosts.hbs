@@ -1,0 +1,25 @@
+<h1 class="list-title">Nova postagem:</h1>
+<div class="container-list">
+  <form action="/controller/posts/add" method="post">
+    <label for="title">Título:</label>
+    <input type="text" name="title" required />
+    <label for="slug">Tema:</label>
+    <input type="text" name="slug" required />
+    <label for="description">Descrição:</label>
+    <input type="text" name="description" required />
+    <label for="content">Conteúdo:</label>
+    <textarea name="content" required></textarea>
+    <label for="category">Categoria</label>
+    <select name="category" required>
+      <option value="" selected disabled>Selecione sua categoria</option>
+      {{#each categories}}
+        <option value="{{_id}}">{{name}}</option>
+      {{else}}
+        <option>Nenhuma categoria registrada</option>
+      {{/each}}
+    </select>
+    <button type="submit">Criar postagem</button>
+  </form>
+</div>
+
+{{>_adminAddPostsMsg}}

@@ -1,0 +1,28 @@
+<h1 class="list-title">Nova postagem:</h1>
+<div class="container-list">
+  <form action="/controller/posts/edit" method="post">
+    <input type="hidden" name="id" value="{{post._id}}" required />
+    <label for="title">Título:</label>
+    <input type="text" name="title" value="{{post.title}}" required />
+    <label for="slug">Tema:</label>
+    <input type="text" name="slug" value="{{post.slug}}" required />
+    <label for="description">Descrição:</label>
+    <input
+      type="text"
+      name="description"
+      value="{{post.description}}"
+      required
+    />
+    <label for="content">Conteúdo:</label>
+    <textarea name="content" required>{{post.content}}</textarea>
+    <label for="category">Categoria</label>
+    <select name="category" required>
+      {{#each category}}
+        <option value="{{_id}}">{{name}}</option>
+      {{else}}
+        <option>Nenhuma categoria registrada</option>
+      {{/each}}
+    </select>
+    <button type="submit">Criar postagem</button>
+  </form>
+</div>

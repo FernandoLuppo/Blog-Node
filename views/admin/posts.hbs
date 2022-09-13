@@ -1,0 +1,33 @@
+
+{{>_adminEditPostMsg}}
+{{>_adminDeletePostMsg}}
+
+<section class="container">
+  <h2>Lista de posts:</h2>
+  <hr />
+  <a href="/admin/posts/add"><button>Nova postagem</button></a>
+</section>
+
+{{#each post}}
+
+  <div class="container-admin-pages">
+    <h3>Título: {{title}}</h3>
+    <p>Descrição: {{description}}</p>
+    <p>data de criação: {{date}}</p>
+    <p>Categoria: {{category.name}}</p>
+    <div class="container-categories-buttons-adminCategories">
+      <a href="/admin/posts/edit/{{_id}}"><button>Editar Categoria</button></a>
+      <form action="/controller/post/delete" method="post">
+        <input type="hidden" name="id" value="{{_id}}" />
+        <button type="submit">Deletar</button>
+      </form>
+    </div>
+  </div>
+
+{{else}}
+
+  <div class="container">
+    <h3>Nenhuma postagem registrada</h3>
+  </div>
+
+{{/each}}

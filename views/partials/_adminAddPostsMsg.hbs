@@ -1,0 +1,15 @@
+{{#if postsSuccessMessage}}
+
+  <div class="container-success-message">
+    <h3>Postagem adicionada com sucesso!!</h3>
+  </div>
+
+{{/if}}
+
+{{#each postsErrorMessage}}
+
+  <div class="container-error-message">
+    <p>{{postsErrorMessage}}</p>
+  </div>
+
+{{/each}}
